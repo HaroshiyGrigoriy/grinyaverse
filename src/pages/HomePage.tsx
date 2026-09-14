@@ -1,4 +1,4 @@
-import heroImage from "../assets/images/hero-page.webp"
+import heroImage from "../assets/images/ya-hero.png"
 import { HomeHero } from "../components/HomeHero/HomeHero"
 import { HomePaperSection } from "../components/HomeBottom/HomePaperSection"
 import  "./HomePage.scss"
