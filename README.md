@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# GrinyaVerse · Личный выпуск
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Личный сайт Гриши в стиле журнального коллажа. React + React Router + Vite, обычный JavaScript и CSS.
 
-Currently, two official plugins are available:
+## Запуск на компьютере
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Нужен Node.js 22.13 или новее. Открой папку проекта в VS Code и выполни в терминале:
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm ci
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Открой адрес, который напечатает Vite, обычно http://localhost:5173.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Сборка для сервера
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm run build
+npm run preview
 ```
+
+После сборки папка `dist/` содержит готовый сайт. Можно загрузить её содержимое на VPS в каталог Nginx. Исходники редактируются в `src/`, а `dist/` каждый раз создаётся заново.
+
+## Где что находится
+
+| Путь | Назначение |
+| --- | --- |
+| `index.html` | HTML-документ, в который React вставляет приложение |
+| `src/main.jsx` | Подключение React, маршрутизатора и стилей |
+| `src/App.jsx` | Список страниц и их адресов |
+| `src/pages/` | Главная, обо мне, проекты, чаевые и страница 404 |
+| `src/components/layout/` | Общие шапка, подвал и оболочка страниц |
+| `src/components/home/` | Постер, интерактивная вырезка «Обо мне», подпись под обложкой |
+| `src/components/common/` | Общие небольшие компоненты и обработка переходов |
+| `src/data/` | Номер выпуска, дата, заголовки страниц и тексты проектов |
+| `src/styles/` | Стили, разделённые по назначению |
+| `public/assets/` | Фотографии, вырезанный портрет и локальный шрифт |
+| `scripts/create-route-entries.mjs` | HTML-входы для открытия внутренних страниц напрямую |
+| `vite.config.js` | Настройки разработки и сборки |
+
+## Как устроены переходы
+
+`BrowserRouter` отслеживает адрес. `Routes` выбирает страницу. Компонент `Link` меняет адрес без полной перезагрузки документа. Для публикации по пути вида `/about/` скрипт сборки также создаёт `dist/about/index.html`.
+
+В `AboutSticker.jsx` состояние `expanded` хранится через `useState`. Первое нажатие раскрывает текст, второе вызывает переход на `/about/`. Крестик, Escape и клик снаружи закрывают текст. Слушатели удаляются при закрытии или размонтировании компонента.
+
+## Где менять сайт
+
+- Главная композиция: `src/components/home/Poster.jsx`.
+- Логика «Обо мне»: `src/components/home/AboutSticker.jsx`.
+- Тексты проектов: `src/data/projects.js`.
+- Дата и номер выпуска: `src/data/site.js`.
+- Цвета и шрифт: `src/styles/base.css`.
+- Мобильная версия: `src/styles/responsive.css`.
+- Фото на обложке: `public/assets/grisha-cutout.png`.
+
+## Что уже работает
+
+Главная, `/about/`, `/projects/`, `/tips/`, переходы назад/вперёд, раскрытие «Обо мне», мобильная вёрстка и локальные изображения. Платёжная ссылка пока не подключена: страница чаевых сообщает об этом явно.
+
+Никаких API-ключей и серверной базы для запуска не требуется. Фотографии личные; перед их повторным использованием нужно разрешение владельца. Лицензия шрифта находится в `public/assets/font-license.txt`. Портрет-вырезка создан с помощью ИИ, поэтому мелкие детали отличаются от исходной фотографии.

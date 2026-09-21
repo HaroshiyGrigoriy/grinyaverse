@@ -1,0 +1,7 @@
+/* Порядок важен: адаптация переопределяет базовые стили в конце. */
+@import './base.css';
+@import './layout.css';
+@import './home.css';
+@import './colophon.css';
+@import './pages.css';
+@import './responsive.css';
