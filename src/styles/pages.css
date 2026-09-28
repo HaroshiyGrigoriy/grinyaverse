@@ -1,0 +1,151 @@
+/* Inside pages share the new edition's typography and printing colours. */
+.inner-page {
+  padding: 45px 0 80px;
+  min-height: 75vh;
+}
+.back-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid;
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+.inner-heading {
+  font-family: var(--poster);
+  font-size: clamp(48px,7vw,98px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -4px;
+  margin: 0 0 40px;
+  overflow-wrap: anywhere;
+}
+.inner-heading mark {
+  background: var(--yellow);
+  color: var(--ink);
+  padding: 0 5px;
+}
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 65px;
+  align-items: start;
+}
+.lead {
+  font-family: var(--news);
+  font-size: 27px;
+  line-height: 1.45;
+  max-width: 690px;
+  margin: 0 0 28px;
+}
+.body-copy {
+  font-family: var(--news);
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 660px;
+}
+.about-photo {
+  position: relative;
+  aspect-ratio: 3/4;
+  transform: rotate(3deg);
+  border: 10px solid var(--paper);
+  outline: 1px solid var(--ink);
+  background: var(--red);
+}
+.photo-window {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.about-photo img {
+  position: absolute;
+  width: 155%;
+  height: auto;
+  bottom: -4%;
+  left: -25%;
+  filter: grayscale(1);
+}
+.tagline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 30px;
+}
+.tagline span {
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid;
+  padding: 7px 10px;
+}
+.text-link {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 2px solid;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+.section-label,.project-index {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .7px;
+}
+.project-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+.project-card {
+  border-top: 4px solid var(--ink);
+  padding: 25px;
+  background: var(--white);
+}
+.project-card:first-child {
+  grid-column: 1/-1;
+  background: var(--red);
+  color: var(--paper);
+  border: 0;
+}
+.project-card:last-child {
+  background: var(--yellow);
+}
+.project-card h2 {
+  font-family: var(--poster);
+  font-size: 32px;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin: 23px 0 18px;
+}
+.project-card p {
+  font-family: var(--news);
+  font-size: 20px;
+  line-height: 1.55;
+  max-width: 880px;
+  margin: 0;
+}
+.tips-layout {
+  max-width: 780px;
+}
+.tips-note {
+  background: var(--yellow);
+  padding: 30px;
+  transform: rotate(-1deg);
+  margin: 40px 0;
+}
+.tips-note strong {
+  font-family: var(--poster);
+  font-size: 24px;
+  letter-spacing: -1px;
+  display: block;
+  margin-bottom: 15px;
+}
+.tips-note p {
+  font-family: var(--news);
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
+}
+.inner-footer {
+  border-top: 2px solid;
+}
+
