@@ -1,0 +1,38 @@
+/* CSS positions the canvas and provides the accessible fallback; folds are WebGL geometry. */
+.menu-controls { display: flex; align-items: center; padding-left: 46px; flex-shrink: 0; }
+.paper-menu-rest { position: fixed; inset: 0; z-index: 65; pointer-events: none; }
+.paper-menu-canvas { display: block; width: 100%; height: 100%; }
+.paper-menu-3d {
+  position: fixed; inset: 0; width: 100%; height: 100dvh; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0; overflow: hidden; background: transparent; color: var(--ink);
+  overscroll-behavior: contain;
+}
+.paper-menu-3d::backdrop { background: rgb(33 27 21 / 66%); }
+.paper-menu-stage { position: absolute; inset: 0; touch-action: none; }
+.paper-menu-close {
+  position: absolute; top: max(10px, env(safe-area-inset-top)); right: max(14px, env(safe-area-inset-right));
+  display: flex; align-items: center; gap: 12px; padding: 7px 14px;
+  min-height: 44px; background: var(--paper); color: var(--wine); font-size: 13px; font-weight: 800;
+}
+.paper-menu-close > span { font: 28px/1 Manrope, sans-serif; }
+.paper-menu-controls { position: absolute; inset: 0; pointer-events: none; }
+.paper-menu-controls a {
+  position: absolute; display: flex; align-items: center; min-height: 44px;
+  opacity: 0; pointer-events: none;
+}
+/* Keyboard focus is drawn into CanvasTexture on the actual paper. The native links
+   remain in the accessibility tree with projected bounds for screen-reader touch. */
+.paper-menu-fallback { padding: 75px 25px 30px; background: var(--paper); overflow: auto; }
+.paper-menu-fallback .paper-menu-stage { display: none; }
+.paper-menu-fallback .paper-menu-controls { position: static; pointer-events: auto; max-width: 650px; margin: 10vh auto; }
+.paper-menu-fallback .paper-menu-controls a {
+  position: static; opacity: 1; pointer-events: auto; padding: 22px 0; border-bottom: 1px solid #a29075;
+  font: 500 clamp(30px, 6vw, 60px)/1.25 Oswald, sans-serif;
+}
+@media (max-width: 360px) { .menu-controls { padding-left: 37px; } }
+/* The panel component and these styles are only loaded by the dev module. */
+@media (max-height: 500px) {
+  .paper-menu-fallback { padding-top: 50px; }
+  .paper-menu-fallback .paper-menu-controls { margin: 0 auto; }
+  .paper-menu-fallback .paper-menu-controls a { padding: 10px 0; font-size: 27px; }
+}

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router";
-import PaperDialog from "../common/PaperDialog";
+import PaperMenu3D from "../paper-menu/PaperMenu3D";
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const burgerRef = useRef(null);
   return (
     <>
       <header className="masthead">
@@ -12,7 +13,9 @@ export default function Header() {
         <span className="edition">
           ЛИЧНЫЙ ВЫПУСК <i>осень / 2026</i>
         </span>
+        <div className="menu-controls">
         <button
+          ref={burgerRef}
           className="menu-toggle"
           onClick={() => setOpen(true)}
           aria-expanded={open}
@@ -26,31 +29,9 @@ export default function Header() {
             <i />
           </span>
         </button>
+        </div>
       </header>
-      <PaperDialog
-        open={open}
-        onClose={() => setOpen(false)}
-        id="site-menu"
-        title="Содержание"
-      >
-        {(close) => (
-          <>
-            <nav className="paper-nav" aria-label="Главное меню">
-              {[
-                ["00", "Обложка", "/"],
-                ["01", "Обо мне", "/about/"],
-                ["02", "Проекты, работа, планы", "/projects/"],
-                ["03", "Ваши чаевые", "/tips/"],
-              ].map(([n, t, url]) => (
-                <Link key={url} to={url} onClick={close}>
-                  <small>{n}</small>
-                  <span>{t}</span>
-                </Link>
-              ))}
-            </nav>
-          </>
-        )}
-      </PaperDialog>
+      <PaperMenu3D open={open} onClose={() => setOpen(false)} triggerRef={burgerRef} />
     </>
   );
 }

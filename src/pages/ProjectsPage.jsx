@@ -19,6 +19,12 @@ export default function ProjectsPage() {
           <ProjectCard key={project.id} {...project} />
         ))}
       </div>
+      <section className="chapter" id="work">
+        <span className="eyebrow">РАБОТА / WILLIAM &amp; KATE</span>
+        <h2>Гости, разговоры и хороший вечер</h2>
+        <p className="lead">Я работаю официантом в William &amp; Kate. Встречаю гостей так, как встречал бы друзей у себя дома.</p>
+        <p>Мне интересно узнавать людей, запоминать то, что им нравится, и делать каждую следующую встречу чуть теплее. Из этой работы появляются идеи для моих проектов, в том числе для обучения команды и внимательной работы с гостями.</p>
+      </section>
       <section className="chapter">
         <h2>И ещё немного творчества</h2>
         <p className="lead">
