@@ -1,57 +1,68 @@
-.page-shell {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
 .masthead {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 22px;
-  padding: 24px 0 20px;
-  min-height: 104px;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 96px;
   border-bottom: 2px solid var(--ink);
+  position: relative;
+  z-index: 20;
 }
 .wordmark {
-  font-size: 29px;
-  font-weight: 900;
-  letter-spacing: -1.8px;
+  font-family: var(--poster);
+  font-size: 31px;
+  letter-spacing: -1px;
+  font-weight: 700;
 }
 .wordmark span {
-  font-weight: 400;
-}
-.wordmark sup {
-  font-size: 12px;
-  vertical-align: top;
-  letter-spacing: 0;
-  margin: 3px 0 0 3px;
-  display: inline-block;
+  font-weight: 300;
 }
 .edition {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-align: center;
+  display: grid;
   gap: 5px;
 }
-.edition strong {
-  font-family: var(--news);
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: .2px;
+.edition i {
+  font-family: Caveat, cursive;
+  font-size: 23px;
+  letter-spacing: 0;
 }
-.edition-city {
-  font-size: 12px;
-  letter-spacing: 1.2px;
-}
-.header-link {
+.menu-toggle {
   display: flex;
+  gap: 15px;
   align-items: center;
-  gap: 20px;
-  font-size: 14px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 18px;
+  transform: rotate(-2deg);
   font-weight: 700;
-  min-height: 44px;
+  font-size: 12px;
+  min-height: 48px;
+  box-shadow: 3px 3px 0 #bcb19a;
 }
-.header-link span {
-  font-size: 25px;
+.burger {
+  width: 23px;
+  display: grid;
+  gap: 5px;
 }
-
+.burger i {
+  height: 2px;
+  background: currentColor;
+  display: block;
+}
+.burger i:nth-child(2) {
+  width: 18px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+}
+.handwritten {
+  font-family: Caveat, cursive;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+}

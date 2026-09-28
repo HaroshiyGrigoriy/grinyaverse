@@ -1,47 +1,55 @@
 .colophon {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  padding: 30px 8px 27px;
-  border-bottom: 2px solid var(--ink);
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 2px solid;
 }
 .colophon p {
-  font-family: var(--news);
-  font-size: 30px;
-  line-height: 1.15;
+  font:
+    36px/1.2 Oswald,
+    sans-serif;
   margin: 0;
-  font-weight: 700;
 }
-.colophon p em {
-  font-weight: 400;
-}
-.colophon-note {
-  font-family: var(--news);
-  font-size: 17px;
-  line-height: 1.4;
-  margin-left: auto;
+.colophon em {
+  font:
+    36px/1.1 Caveat,
+    cursive;
 }
 .issue-number {
-  font-family: var(--poster);
-  font-size: 78px;
-  line-height: 1;
-  letter-spacing: -7px;
-  color: var(--red);
-  margin-right: 5px;
+  font:
+    90px/0.9 Oswald,
+    sans-serif;
+  color: var(--wine);
 }
 .footer {
+  padding: 28px 0 18px;
+}
+.socials {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  min-height: 70px;
-  padding: 15px 0;
-  font-size: 12px;
-  letter-spacing: .7px;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-size: 13px;
   font-weight: 700;
 }
-.footer a {
-  padding: 12px 0;
+.socials a {
+  border-bottom: 1px solid;
+  padding: 8px 0;
 }
-
+.social-pending {
+  padding: 8px 0;
+  color: #675d51;
+}
+.social-pending small {
+  font-size: 9px;
+  font-weight: 400;
+}
+.footer-bottom {
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
