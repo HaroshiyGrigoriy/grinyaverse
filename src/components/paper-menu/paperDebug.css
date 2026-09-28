@@ -1,0 +1,9 @@
+.paper-debug { position: absolute; left: 10px; bottom: 12px; width: min(310px, calc(100% - 20px)); color: #f5eddc; background: #272620f5; font: 12px/1.5 Manrope, sans-serif; }
+.paper-debug summary { cursor: pointer; padding: 12px 16px; min-height: 44px; }
+.paper-debug-fields { padding: 0 16px 15px; max-height: 48dvh; overflow: auto; }
+.paper-debug label { display: block; margin: 9px 0; }
+.paper-debug label > span { display: flex; justify-content: space-between; }
+.paper-debug input[type=range] { width: 100%; min-height: 24px; accent-color: #d9c38d; }
+.paper-debug .paper-debug-checkbox { display: flex; align-items: center; gap: 10px; }
+.paper-debug button { padding: 10px 12px; background: #ece2ca; color: #312d24; }
+.paper-debug small { display: block; margin-top: 10px; opacity: .8; }

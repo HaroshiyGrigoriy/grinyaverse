@@ -1,66 +1,50 @@
-import { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router';
-
+import { useState } from "react";
+import { Link } from "react-router";
+import PaperDialog from "../common/PaperDialog";
 export default function AboutSticker() {
-  const [expanded, setExpanded] = useState(false);
-  const containerRef = useRef(null);
-  const buttonRef = useRef(null);
-  const navigate = useNavigate();
-
-  function closeAndFocus() {
-    setExpanded(false);
-    buttonRef.current?.focus();
-  }
-
-  function handleClick() {
-    if (expanded) navigate('/about/');
-    else setExpanded(true);
-  }
-
-  useEffect(() => {
-    if (!expanded) return;
-
-    function handleKeyDown(event) {
-      if (event.key === 'Escape') {
-        setExpanded(false);
-        buttonRef.current?.focus();
-      }
-    }
-    function handleOutsideClick(event) {
-      if (!containerRef.current?.contains(event.target)) setExpanded(false);
-    }
-
-    document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('click', handleOutsideClick);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, [expanded]);
-
+  const [open, setOpen] = useState(false);
   return (
-    <div className="about-position" ref={containerRef}>
+    <div className="about-position">
       <button
         className="about-cutout"
-        id="about-sticker"
-        ref={buttonRef}
-        type="button"
-        aria-expanded={expanded}
+        onClick={() => setOpen(true)}
+        aria-expanded={open}
         aria-controls="about-teaser"
-        onClick={handleClick}
+        aria-haspopup="dialog"
       >
-        <span className="cutout-index">01 / ДАВАЙ ЗНАКОМИТЬСЯ</span>
-        <span className="about-title">ОБО<br />МНЕ <span aria-hidden="true">↗</span></span>
-        <span className="cutout-hint" id="about-hint">
-          {expanded ? 'ЕЩЁ РАЗ - ВСЯ ИСТОРИЯ' : 'НАЖМИ И УЗНАЙ'}
+        <span className="cutout-number">01</span>
+        <span className="about-title">
+          ОБО
+          <br />
+          МНЕ
         </span>
       </button>
-      <div className="teaser" id="about-teaser" hidden={!expanded}>
-        <button className="teaser-close" type="button" aria-label="Свернуть информацию обо мне" onClick={closeAndFocus}>×</button>
-        <span className="teaser-kicker">ПАРА СЛОВ ОБО МНЕ</span>
-        <p>Я Гриша. Работаю в William &amp; Kate, делаю свои проекты и люблю разбираться, как всё устроено.</p>
-        <Link to="/about/">Познакомимся поближе ↗</Link>
-      </div>
+      <PaperDialog
+        open={open}
+        onClose={() => setOpen(false)}
+        id="about-teaser"
+        title="Привет, я Гриша."
+      >
+        {(close) => (
+          <>
+            <p className="lead">
+              Здесь вы можете познакомиться со мной, узнать меня поближе.
+            </p>
+            <p>
+              Здесь о том, кто я, что меня окружает, как я смотрю на мир и к
+              чему стремлюсь.
+            </p>
+            <div className="teaser-chapters">
+              <span>Биография</span>
+              <span>Мой мир</span>
+              <span>Что дальше</span>
+            </div>
+            <Link className="paper-link" to="/about/" onClick={close}>
+              Открыть мою историю
+            </Link>
+          </>
+        )}
+      </PaperDialog>
     </div>
   );
 }

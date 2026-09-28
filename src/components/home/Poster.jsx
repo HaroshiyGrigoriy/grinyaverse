@@ -1,33 +1,61 @@
-import { Link } from 'react-router';
-import AboutSticker from './AboutSticker';
-import { site } from '../../data/site';
-
+import { Link } from "react-router";
+import AboutSticker from "./AboutSticker";
 export default function Poster() {
   return (
     <section className="poster" aria-labelledby="cover-title">
-      <div className="poster-topline"><span>{site.issueDate}</span><span>ЖИЗНЬ. РАБОТА. ВСЁ ОСТАЛЬНОЕ.</span></div>
+      <div className="poster-topline">
+        <span>СЕНТЯБРЬ 2026</span>
+        <span>ОСЕННИЙ ВЫПУСК / 01</span>
+      </div>
+      <div className="newspaper" aria-hidden="true">
+        <strong>ЛИЧНАЯ ХРОНИКА</strong>
+        <div>
+          <p>
+            Люди. Идеи. Впечатления. Любопытство начинается с простого вопроса.
+            Каждый день есть что-то, к чему хочется присмотреться.
+          </p>
+          <p>
+            Работа, музыка, новые города. Истории складываются из разговоров и
+            маленьких наблюдений. Продолжение на следующих страницах.
+          </p>
+        </div>
+      </div>
       <div className="poster-type">
         <p className="hello-slip">Привет, я</p>
         <h1 id="cover-title">ГРИША</h1>
-        <span className="echo echo-one" aria-hidden="true">ГРИША</span>
-        <span className="echo echo-two" aria-hidden="true">ГРИША</span>
       </div>
-      <div className="paper-fragment" aria-hidden="true"><span>GRINYAVERSE</span><span>Личный выпуск</span><span>Истории из жизни</span></div>
       <figure className="hero-portrait">
-        <img src="/assets/grisha-cutout.png" alt="Улыбающийся Гриша опирается щекой на руку" width="1106" height="1422" fetchPriority="high" />
+        <img
+          src="/assets/grisha-portrait.jpeg"
+          alt="Гриша улыбается, опираясь щекой на руку"
+          width="864"
+          height="1536"
+          fetchPriority="high"
+        />
       </figure>
       <AboutSticker />
-      <Link className="projects-cutout" to="/projects/">
-        <span className="cutout-index">02 / ЧТО Я ДЕЛАЮ</span>
-        <span className="projects-title">ПРОЕКТЫ.<br />РАБОТА. ПЛАНЫ.</span>
-        <span className="projects-arrow" aria-hidden="true">↗</span>
-      </Link>
-      <Link className="tips-seal" to="/tips/">
-        <span className="tips-kicker">ЕСЛИ БЫЛО КЛАССНО</span>
-        <span className="tips-word">НА ЧАЙ</span>
-        <span className="tips-action">ЧАЕВЫЕ ↗</span>
-      </Link>
-      <div className="poster-bottomline"><span>WILLIAM &amp; KATE / ГРИША</span><span>ЛИСТАЙ. НАЖИМАЙ. ЗНАКОМЬСЯ.</span></div>
+      <div className="cover-actions">
+        <Link className="projects-cutout" to="/projects/">
+          <span className="folder-tab">02 / РАБОЧИЕ ЗАМЕТКИ</span>
+          <span className="projects-title">Проекты</span>
+          <span className="projects-subtitle">работа и планы</span>
+          <span className="projects-caption">Из интереса - в дело.</span>
+        </Link>
+        <Link className="tips-seal" to="/tips/">
+          <span className="ticket-stub">03 / ЛИЧНЫЙ ВКЛАД</span>
+          <span className="tips-kicker">У ХОРОШЕГО ВЕЧЕРА ЕСТЬ ПРОДОЛЖЕНИЕ</span>
+          <span className="tips-word">
+            Ваши
+            <br />
+            чаевые
+          </span>
+          <span className="tips-action">На видео, музыку и свои идеи</span>
+        </Link>
+      </div>
+      <div className="poster-bottomline">
+        <span>WILLIAM & KATE</span>
+        <span>ЛИЧНАЯ ХРОНИКА</span>
+      </div>
     </section>
   );
 }

@@ -1,151 +1,224 @@
-/* Inside pages share the new edition's typography and printing colours. */
 .inner-page {
-  padding: 45px 0 80px;
-  min-height: 75vh;
+  padding: 28px 0 70px;
+  max-width: 1080px;
+  margin: auto;
+  min-height: 70vh;
 }
 .back-link {
   display: inline-block;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 12px;
   border-bottom: 1px solid;
-  padding: 10px 0;
-  margin-bottom: 40px;
+  padding: 12px 0;
 }
+.page-heading {
+  margin: 40px 0;
+}
+.page-heading h1,
 .inner-heading {
-  font-family: var(--poster);
-  font-size: clamp(48px,7vw,98px);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -4px;
-  margin: 0 0 40px;
-  overflow-wrap: anywhere;
+  font:
+    600 clamp(56px, 8vw, 100px) / 1.05 Oswald,
+    sans-serif;
+  margin: 15px 0;
+  color: var(--wine);
+  letter-spacing: -1.5px;
 }
-.inner-heading mark {
-  background: var(--yellow);
-  color: var(--ink);
-  padding: 0 5px;
-}
-.about-layout {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 65px;
-  align-items: start;
+.page-heading .handwritten {
+  margin: 18px 0;
 }
 .lead {
-  font-family: var(--news);
-  font-size: 27px;
-  line-height: 1.45;
-  max-width: 690px;
-  margin: 0 0 28px;
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 2.5vw, 29px);
+  line-height: 1.5;
 }
-.body-copy {
-  font-family: var(--news);
-  font-size: 20px;
-  line-height: 1.6;
-  max-width: 660px;
-}
-.about-photo {
-  position: relative;
-  aspect-ratio: 3/4;
-  transform: rotate(3deg);
-  border: 10px solid var(--paper);
-  outline: 1px solid var(--ink);
-  background: var(--red);
-}
-.photo-window {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-}
-.about-photo img {
-  position: absolute;
-  width: 155%;
-  height: auto;
-  bottom: -4%;
-  left: -25%;
-  filter: grayscale(1);
-}
-.tagline {
+.chapter-nav {
   display: flex;
+  gap: 12px;
   flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 30px;
+  margin-bottom: 50px;
 }
-.tagline span {
-  font-size: 14px;
-  font-weight: 700;
-  border: 1px solid;
-  padding: 7px 10px;
-}
-.text-link {
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 700;
-  border-bottom: 2px solid;
-  padding: 10px 0;
-  margin-top: 20px;
-}
-.section-label,.project-index {
+.chapter-nav a {
+  background: var(--blue);
+  padding: 12px 18px;
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .7px;
+  border-bottom: 2px solid #798d8f;
+}
+.chapter {
+  margin: 60px 0;
+  scroll-margin-top: 30px;
+}
+.chapter h2 {
+  margin: 15px 0 24px;
+}
+.biography {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+.city-stamp {
+  margin: 0;
+  transform: rotate(5deg);
+  padding: 18px;
+  background: #fdf9e9;
+  border: 5px dotted #c3b397;
+  box-shadow: 5px 7px 0 #dcd3bc;
+}
+.city-stamp > span {
+  font:
+    22px Oswald,
+    sans-serif;
+  display: block;
+  margin-bottom: 12px;
+}
+.city-stamp img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: sepia(0.15);
+}
+.city-stamp figcaption {
+  padding-top: 12px;
+  font:
+    25px Oswald,
+    sans-serif;
+}
+.city-stamp small {
+  display: block;
+  font:
+    21px Caveat,
+    cursive;
+  margin-top: 4px;
+}
+.interest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.interest-grid article {
+  padding: 26px;
+  background: var(--white);
+  border-top: 2px solid var(--wine);
+}
+.interest-grid article:nth-child(2),
+.interest-grid article:nth-child(3) {
+  background: var(--blue);
+}
+.interest-grid h3 {
+  margin: 12px 0;
+}
+.interest-grid article > span {
+  font:
+    14px Oswald,
+    sans-serif;
+  color: var(--wine);
+}
+.future-note {
+  background: var(--lime);
+  padding: 35px;
+  transform: rotate(-1deg);
+}
+.photo-credit {
+  font-size: 11px;
+  color: #625c50;
+}
+.photo-credit a {
+  text-decoration: underline;
 }
 .project-stack {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 26px;
+  gap: 30px;
 }
 .project-card {
-  border-top: 4px solid var(--ink);
-  padding: 25px;
+  padding: 32px;
   background: var(--white);
+  box-shadow: 4px 5px 0 #d7cdb7;
+  border-top: 4px solid var(--wine);
 }
-.project-card:first-child {
-  grid-column: 1/-1;
-  background: var(--red);
-  color: var(--paper);
-  border: 0;
+.project-card:nth-child(2) {
+  background: var(--blue);
 }
-.project-card:last-child {
-  background: var(--yellow);
+.project-card:nth-child(3) {
+  background: var(--lime);
 }
 .project-card h2 {
-  font-family: var(--poster);
-  font-size: 32px;
-  letter-spacing: -1px;
-  line-height: 1.15;
-  margin: 23px 0 18px;
+  font-size: 37px;
+  margin: 24px 0;
 }
 .project-card p {
-  font-family: var(--news);
-  font-size: 20px;
-  line-height: 1.55;
-  max-width: 880px;
-  margin: 0;
+  font-size: 16px;
 }
-.tips-layout {
-  max-width: 780px;
-}
-.tips-note {
-  background: var(--yellow);
-  padding: 30px;
-  transform: rotate(-1deg);
-  margin: 40px 0;
-}
-.tips-note strong {
-  font-family: var(--poster);
-  font-size: 24px;
-  letter-spacing: -1px;
+.project-note {
   display: block;
-  margin-bottom: 15px;
+  font:
+    22px Caveat,
+    cursive;
+  margin-top: 22px;
 }
-.tips-note p {
-  font-family: var(--news);
+.text-link {
+  display: inline-block;
+  border-bottom: 1px solid;
+  margin-top: 20px;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+.tips-intro {
+  max-width: 750px;
+}
+.tips-destinations {
+  margin: 45px 0;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 35px;
+  align-items: start;
+}
+.destination-tabs {
+  display: grid;
+  gap: 8px;
+}
+.destination-tabs button {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px;
+  background: #e9e2d0;
+  border: 1px solid #c9bea6;
+  font-size: 14px;
+}
+.destination-tabs button[aria-pressed="true"] {
+  background: var(--wine);
+  color: white;
+  transform: rotate(-2deg);
+}
+.destination-tabs button > span {
+  font-size: 25px;
+  width: 30px;
+  text-align: center;
+}
+.destination-note {
+  background: var(--blue);
+  padding: 30px;
+  transform: rotate(2deg);
+  box-shadow: 5px 5px 0 #b5c7c6;
+  min-height: 320px;
+}
+.destination-note h2 {
+  margin: 24px 0;
+  font-size: 40px;
+}
+.destination-note .handwritten {
+  font-size: 27px;
+}
+.tips-signature {
   font-size: 20px;
-  line-height: 1.5;
-  margin: 0;
+  border-top: 1px solid #bdb39d;
+  padding-top: 30px;
 }
-.inner-footer {
-  border-top: 2px solid;
+.tips-signature .handwritten {
+  display: block;
+  margin-top: 15px;
+  font-size: 44px;
 }
-

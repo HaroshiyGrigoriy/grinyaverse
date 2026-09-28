@@ -1,64 +1,85 @@
-@font-face {
-  font-family: Poster;
-  src: url('/assets/poster.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
 :root {
-  --paper: #f3eddd;
+  --paper: #f5eddc;
   --white: #fffaf0;
-  --ink: #20201c;
-  --red: #c72d20;
-  --yellow: #edee51;
-  --poster: Poster,'Arial Black',Arial,sans-serif;
-  --news: Georgia,'Times New Roman',serif;
-  --line: #bcb6a7;
-  --lime: var(--yellow);
+  --ink: #282a23;
+  --wine: #6c2039;
+  --blue: #d8e6ea;
+  --lime: #e9ed8c;
+  --poster: Oswald, sans-serif;
+  --news: Georgia, serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Manrope, sans-serif;
+  font-synthesis: none;
 }
 * {
   box-sizing: border-box;
 }
-html {
-  background: var(--paper);
-  color: var(--ink);
-  scroll-behavior: smooth;
-}
 body {
   margin: 0;
-  font-family: Arial,Helvetica,sans-serif;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 a {
   color: inherit;
   text-decoration: none;
 }
-button {
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-a,button {
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
-button:focus-visible,a:focus-visible {
-  outline: 3px solid #144cef;
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #245cb4;
   outline-offset: 5px;
 }
-[hidden] {
-  display: none!important;
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  border: 0;
+}
+p {
+  line-height: 1.75;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--poster);
+  line-height: 1.12;
+  font-weight: 600;
+}
+h2 {
+  font-size: clamp(30px, 4vw, 52px);
+}
+h3 {
+  font-size: 28px;
+}
+html {
+  scroll-behavior: smooth;
+}
+section[id] {
+  scroll-margin-top: 110px;
+}
+.page-shell {
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 32px;
 }
 .skip-link {
-  position: absolute;
+  position: fixed;
+  top: -100px;
   left: 20px;
-  top: -60px;
-  z-index: 30;
+  z-index: 100;
   padding: 12px;
-  background: var(--white);
+  background: white;
 }
 .skip-link:focus {
-  top: 8px;
+  top: 12px;
 }
-
+main:focus { outline: none; }
