@@ -10,7 +10,7 @@ export default function ProjectsPage() {
         <h1>
           Проекты,
           <br />
-          работа & планы
+          работа и планы
         </h1>
         <p className="handwritten">Из интереса - в дело.</p>
       </header>

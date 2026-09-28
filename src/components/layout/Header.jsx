@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import PaperDialog from "../common/PaperDialog";
-import SocialLinks from "../common/SocialLinks";
 export default function Header() {
   const [open, setOpen] = useState(false);
   return (
@@ -49,7 +48,6 @@ export default function Header() {
                 </Link>
               ))}
             </nav>
-            <SocialLinks />
           </>
         )}
       </PaperDialog>

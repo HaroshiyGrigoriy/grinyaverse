@@ -32,32 +32,26 @@ export default function Poster() {
           height="1536"
           fetchPriority="high"
         />
-        
       </figure>
       <AboutSticker />
-      <Link className="projects-cutout" to="/projects/">
-        <span className="cutout-number">02</span>
-        <span className="projects-title">
-          ПРОЕКТЫ
-          <br />
-          РАБОТА <em>&</em> ПЛАНЫ
-        </span>
-        <span className="project-tabs" aria-hidden="true">
-          <i>идеи</i>
-          <i>в процессе</i>
-        </span>
-      </Link>
-      <Link className="tips-seal" to="/tips/">
-        <span className="tips-icons" aria-hidden="true">
-          ♫ ◉ ₽
-        </span>
-        <span className="tips-word">
-          ВАШИ
-          <br />
-          ЧАЕВЫЕ
-        </span>
-        <span className="tips-action">во что они превращаются</span>
-      </Link>
+      <div className="cover-actions">
+        <Link className="projects-cutout" to="/projects/">
+          <span className="folder-tab">02 / РАБОЧИЕ ЗАМЕТКИ</span>
+          <span className="projects-title">Проекты</span>
+          <span className="projects-subtitle">работа и планы</span>
+          <span className="projects-caption">Из интереса - в дело.</span>
+        </Link>
+        <Link className="tips-seal" to="/tips/">
+          <span className="ticket-stub">03 / ЛИЧНЫЙ ВКЛАД</span>
+          <span className="tips-kicker">У ХОРОШЕГО ВЕЧЕРА ЕСТЬ ПРОДОЛЖЕНИЕ</span>
+          <span className="tips-word">
+            Ваши
+            <br />
+            чаевые
+          </span>
+          <span className="tips-action">На видео, музыку и свои идеи</span>
+        </Link>
+      </div>
       <div className="poster-bottomline">
         <span>WILLIAM & KATE</span>
         <span>ЛИЧНАЯ ХРОНИКА</span>

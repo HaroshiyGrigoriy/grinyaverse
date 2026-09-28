@@ -17,19 +17,6 @@
     min-height: 225px;
     padding-left: 19%;
   }
-  .projects-cutout {
-    width: 53%;
-    left: 5%;
-    bottom: 110px;
-  }
-  .tips-seal {
-    width: 195px;
-    right: 4%;
-    bottom: 69px;
-  }
-  .tips-word {
-    font-size: 32px;
-  }
   .newspaper {
     left: 18%;
     width: 60%;
@@ -131,69 +118,12 @@
     right: 3%;
     bottom: 30%;
   }
-  .projects-cutout {
-    bottom: 139px;
-    left: 5%;
-    width: 78%;
-    padding: 17px 20px 20px;
-  }
-  .projects-title {
-    font-size: 30px;
-  }
-  .project-tabs {
-    right: 12px;
-  }
-  .project-tabs i {
-    font-size: 14px;
-    padding: 3px 7px;
-  }
-  .tips-seal {
-    right: 5%;
-    bottom: 40px;
-    width: 177px;
-    padding: 15px;
-    transform: rotate(5deg);
-  }
-  .tips-word {
-    font-size: 27px;
-  }
-  .tips-icons {
-    font-size: 17px;
-    letter-spacing: 8px;
-    margin-bottom: 5px;
-  }
-  .tips-action {
-    font-size: 17px;
-    margin-top: 7px;
-  }
   .poster-bottomline {
     bottom: 14px;
     padding-top: 8px;
   }
   .poster-bottomline span:last-child {
     display: none;
-  }
-  .colophon {
-    grid-template-columns: 1fr auto;
-    gap: 12px;
-    padding: 24px 3px;
-  }
-  .colophon > .eyebrow {
-    grid-column: 1/-1;
-    font-size: 9px;
-  }
-  .colophon p {
-    font-size: 25px;
-  }
-  .colophon em {
-    font-size: 27px;
-  }
-  .issue-number {
-    font-size: 65px;
-  }
-  .socials {
-    gap: 17px;
-    font-size: 12px;
   }
   .footer-bottom {
     font-size: 8px;
@@ -329,13 +259,6 @@
   .about-title {
     font-size: 34px;
   }
-  .projects-title {
-    font-size: 26px;
-  }
-  .projects-cutout {
-    bottom: 142px;
-    width: 85%;
-  }
   .page-heading h1 {
     font-size: 47px;
   }
@@ -344,9 +267,6 @@
   }
   .paper-sheet {
     padding: 36px 20px 26px;
-  }
-  .socials {
-    gap: 12px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -366,23 +286,46 @@
     opacity: 0;
   }
 }
-/* Leave each label readable where the paper pieces overlap. */
-@media(min-width:1001px) {
+@media (min-width: 1001px) {
   .about-position { top: 310px; }
-  .projects-cutout { bottom: 80px; }
 }
-@media(max-width:700px) {
-  .poster { height: 920px; }
-  .projects-cutout { bottom: 225px; }
-  .tips-seal { bottom: 52px; }
+@media (min-width: 701px) and (max-width: 1000px) {
+  .cover-actions { inset-inline: 5%; gap: 6%; bottom: 65px; }
+  .projects-cutout { padding: 23px 24px 20px; }
+  .projects-subtitle { font-size: 22px; }
+  .tips-seal { padding: 22px 19px 20px 53px; }
+  .tips-word { font-size: 42px; }
 }
-@media(max-width:360px) {
-  .poster { height: 870px; }
-  .projects-cutout { bottom: 215px; }
-}
-@media(max-width:700px) {
+@media (max-width: 700px) {
+  .poster { height: 1010px; }
+  .cover-actions {
+    inset: auto 7% 55px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .projects-cutout { width: 91%; padding: 20px 24px 17px; }
+  .folder-tab { padding: 9px 17px 7px; font-size: 8px; }
+  .projects-title { font-size: 46px; }
+  .projects-subtitle { font-size: 22px; }
+  .projects-caption { font-size: 22px; margin-top: 15px; }
+  .tips-seal { justify-self: end; width: 88%; padding: 19px 18px 19px 54px; }
+  .tips-word { font-size: 40px; }
+  .tips-kicker { font-size: 7px; }
+  .tips-action { font-size: 20px; }
+  .issue-contents { grid-template-columns: 1fr; gap: 14px; }
+  .issue-contents a { border-bottom: 1px solid #d6cbb5; padding-bottom: 19px; }
+  .issue-contents a:last-child { border: 0; padding-bottom: 0; }
+  .issue-contents small { margin-top: 5px; }
+  .colophon { padding: 26px 3px; }
+  .colophon h2 { font-size: 9px; }
   .destination-tabs button { flex-direction: column; align-items: flex-start; font-size: 12px; gap: 8px; }
   .destination-tabs button:last-child { flex-direction: row; align-items: center; }
   .destination-note { min-width: 0; }
   .destination-note h2 { font-size: clamp(27px, 7.5vw, 34px); overflow-wrap: anywhere; }
+}
+@media (max-width: 360px) {
+  .poster { height: 1010px; }
+  .cover-actions { inset-inline: 8%; }
+  .projects-cutout { width: 96%; }
+  .tips-seal { width: 95%; }
 }
