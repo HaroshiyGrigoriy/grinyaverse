@@ -8,12 +8,12 @@ export default function SiteLayout() {
   return (
     <>
       <a className="skip-link" href="#main">К содержимому</a>
-      <div className="page-shell">
-        <Header home={home} />
-        <main id="main" tabIndex={-1} className={home ? undefined : 'inner-page'}>
+      <div className={home ? 'cover-shell' : 'page-shell'}>
+        {!home && <Header />}
+        <main id="main" tabIndex={-1} className={home ? 'cover-main' : 'inner-page'}>
           <Outlet />
         </main>
-        <Footer home={home} />
+        {!home && <Footer />}
       </div>
     </>
   );

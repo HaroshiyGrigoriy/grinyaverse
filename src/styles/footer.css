@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  min-height: 70px;
+  padding: 15px 0;
+  font-size: 12px;
+  letter-spacing: .7px;
+  font-weight: 700;
+}
+.footer a {
+  padding: 12px 0;
+}
+

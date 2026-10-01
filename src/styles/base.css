@@ -1,4 +1,25 @@
 @font-face {
+  font-family: 'Bodoni Moda';
+  src: url('/assets/fonts/bodoni-moda-600.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/assets/fonts/cormorant-garamond-600.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/assets/fonts/cormorant-garamond-500-italic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
   font-family: Poster;
   src: url('/assets/poster.ttf') format('truetype');
   font-weight: 800;
@@ -9,10 +30,16 @@
   --paper: #f3eddd;
   --white: #fffaf0;
   --ink: #20201c;
-  --red: #c72d20;
-  --yellow: #edee51;
+  --red: #8f3f2b;
+  --yellow: #d8a64b;
+  --autumn: #b66f35;
+  --autumn-light: #e9bf83;
+  --autumn-dark: #54251f;
+  --cover-paper: #f6ead5;
   --poster: Poster,'Arial Black',Arial,sans-serif;
   --news: Georgia,'Times New Roman',serif;
+  --masthead: 'Bodoni Moda', 'Times New Roman', serif;
+  --editorial: 'Cormorant Garamond', Georgia, serif;
   --line: #bcb6a7;
   --lime: var(--yellow);
 }

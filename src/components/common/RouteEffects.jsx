@@ -11,7 +11,7 @@ export default function RouteEffects() {
     document.title = pageTitles[route] || 'Страница не найдена / GrinyaVerse';
     document.body.classList.toggle('cover-page', route === '/');
     document.querySelector('meta[name="theme-color"]')?.setAttribute(
-      'content', route === '/' ? '#c72d20' : '#eeece4',
+      'content', route === '/' ? '#30352b' : '#eeece4',
     );
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 

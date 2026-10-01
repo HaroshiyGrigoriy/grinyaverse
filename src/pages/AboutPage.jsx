@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <>
       <BackLink />
-      <h1 className="inner-heading">ПРИВЕТ ЕЩЁ РАЗ.<br />Я <mark>ГРИША.</mark></h1>
+      <h1 className="inner-heading">ОБО МНЕ.<br /><mark>ЧЕМ ЖИВУ.</mark></h1>
       <div className="about-layout">
         <div>
           <p className="lead">Живу в Чебоксарах, работаю официантом в William &amp; Kate и придумываю, что ещё могу сделать.</p>

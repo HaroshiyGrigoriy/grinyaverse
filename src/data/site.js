@@ -4,11 +4,11 @@ export const site = {
   city: 'ЧЕБОКСАРЫ',
   issue: '01',
   year: '2026',
-  issueDate: 'СЕНТЯБРЬ 2026',
+  issueDate: 'ОСЕНЬ 2026',
 };
 
 export const pageTitles = {
-  '/': 'Гриша / Личный выпуск / GrinyaVerse',
+  '/': 'GRINYAVERSE / Осенний выпуск',
   '/about': 'Обо мне / GrinyaVerse',
   '/projects': 'Проекты, работа, планы / GrinyaVerse',
   '/tips': 'На чай Грише / GrinyaVerse',
